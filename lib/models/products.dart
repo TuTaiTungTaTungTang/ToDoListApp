@@ -29,6 +29,7 @@ class Product {
       title: title ?? this.title, 
       description: description ?? this.description, 
       price: price ?? this.price, 
-      imageUrl: imageUrl ?? this.imageUrl);
+      imageUrl: imageUrl ?? this.imageUrl,
+      isFavorite: isFavorite ?? this.isFavorite);
   }
 }

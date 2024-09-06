@@ -5,7 +5,7 @@ import '../../models/products.dart';
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen(
     this.product,{
-      super.key
+      super.key,
     }
   );
 
@@ -13,7 +13,6 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: Text(product.title),

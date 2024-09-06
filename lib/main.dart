@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'ui/products/products_manager.dart';
 import 'ui/products/product_detail_screen.dart';
-
+import 'ui/products/products_overview_screen.dart';
 void main(){
   runApp(const MyApp());
 }
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       surfaceTint: Colors.grey[200]);
 
      final themeData = ThemeData(
-      fontFamily: 'Lato',
+      fontFamily: 'Lato', 
       colorScheme: colorScheme,
       appBarTheme: AppBarTheme(
         backgroundColor: colorScheme.primary,
@@ -33,9 +33,9 @@ class MyApp extends StatelessWidget {
       theme: themeData,
       
       home: SafeArea(
-        child: ProductDetailScreen(
-          ProductsManager().items[0],
-        ))
+      // child: ProductsOverviewScreen(),
+      child: ProductDetailScreen(ProductsManager().items[0]),
+      ),
      );
   }
 }
