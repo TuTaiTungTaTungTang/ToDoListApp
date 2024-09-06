@@ -22,8 +22,23 @@ class UserProductListTitle extends StatelessWidget {
         width: 100,
         child: Row(
           children: <Widget>[
-            EditUserProductButton(),
-            DeleteUserProductButton(),
+            EditUserProductButton(
+              onPressed: (){
+                print('Go to edit product screen');
+              }
+            ),
+             DeleteUserProductButton(
+              onPressed: (){
+                ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(
+                  const SnackBar(
+                    content: Text('Delete a product',
+                    textAlign: TextAlign.center,)
+                  )
+                );
+              },
+            ),
           ],
         )
       ),
@@ -33,19 +48,35 @@ class UserProductListTitle extends StatelessWidget {
 }
 
 class DeleteUserProductButton extends StatelessWidget {
-  const DeleteUserProductButton({super.key})
+  const DeleteUserProductButton({
+    super.key, 
+    this.onPressed
+    });
+
+    final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return IconButton(
+      icon: const Icon(Icons.delete),
+      onPressed: onPressed,
+      color: Theme.of(context).colorScheme.error,
+    );    
   }
 }
 
 class EditUserProductButton extends StatelessWidget {
-  const EditUserProductButton({super.key})
+  const EditUserProductButton({
+    super.key,
+    this.onPressed
+    });
+    final void Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
+    return IconButton(
+      icon: const Icon(Icons.edit),
+      onPressed: onPressed,
+      color: Theme.of(context).colorScheme.primary
+    );
+    }
 }
