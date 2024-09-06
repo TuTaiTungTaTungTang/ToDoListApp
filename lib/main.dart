@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       theme: themeData,
       
       home: const SafeArea(
-      child: UserProductsScreen(),
+      child: ProductsOverviewScreen(),
       ),
      );
   }
