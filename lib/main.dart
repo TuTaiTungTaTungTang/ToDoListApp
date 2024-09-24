@@ -5,7 +5,8 @@ import 'ui/products/products_manager.dart';
 import 'ui/products/product_detail_screen.dart';
 import 'ui/products/products_overview_screen.dart';
 import 'ui/orders/orders_screen.dart';
-void main(){
+
+void main() {
   runApp(const MyApp());
 }
 
@@ -14,10 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = ColorScheme.fromSeed(
-      seedColor: Colors.purple,
-      secondary: Colors.deepOrange,
-      surface: Colors.white,
-      surfaceTint: Colors.grey[200]);
+        seedColor: Colors.purple,
+        secondary: Colors.deepOrange,
+        surface: Colors.white,
+        surfaceTint: Colors.grey[200]);
 
     final themeData = ThemeData(
       fontFamily: 'Lato',
@@ -41,12 +42,11 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-     return MaterialApp(
+    return MaterialApp(
       title: 'MyShop',
       debugShowCheckedModeBanner: false,
       theme: themeData,
-      
-       home: const ProductsOverviewScreen(),
+      home: const ProductsOverviewScreen(),
       routes: {
         CartScreen.routeName: (ctx) => const SafeArea(
               child: CartScreen(),
@@ -74,6 +74,6 @@ class MyApp extends StatelessWidget {
         }
         return null;
       },
-     );
+    );
   }
 }
