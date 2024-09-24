@@ -24,12 +24,11 @@ class ProductGridTitle extends StatelessWidget {
         ),
         child: GestureDetector(
           onTap: () {
-           // Chuyển đến trang ProductDetailScreen
-            Navigator.of(context).push(
-            MaterialPageRoute(
-            builder: (ctx) => ProductDetailScreen(product),
-            ),
-);
+            // chuyen den trang ProductDetailScreen
+            Navigator.of(context).pushNamed(
+              ProductDetailScreen.routeName,
+              arguments: product.id,
+            );
           },
           child: Image.network(
             product.imageUrl,

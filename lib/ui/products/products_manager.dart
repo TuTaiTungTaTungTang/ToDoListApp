@@ -38,6 +38,13 @@
       ),
     ];
     
+    Product? findById(String id) {
+try {
+return _items.firstWhere((item) => item.id == id);
+} catch (error) {
+return null;
+}
+}
 
     int get itemCount {
       return _items.length;

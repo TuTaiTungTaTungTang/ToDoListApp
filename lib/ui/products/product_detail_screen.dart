@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../models/products.dart';
-
+import '../cart/cart_screen.dart';
+import 'products_overview_screen.dart';
+import '../../ui/screens.dart';
 class ProductDetailScreen extends StatelessWidget {
+  static const routeName = '/product_detail';
   final Product product;
 
   const ProductDetailScreen(this.product, {super.key});
@@ -11,14 +14,54 @@ class ProductDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(product.title),
-        actions: [
+        actions: <Widget>[
           IconButton(
-            icon: Icon(
-              product.isFavorite ? Icons.favorite : Icons.favorite_border,
-              color: product.isFavorite ? Colors.red : null,
-            ),
+            icon: const Icon(Icons.home),
             onPressed: () {
-              // TODO: Implement favorite toggle
+              Navigator.of(context).pushAndRemoveUntil(
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      const ProductsOverviewScreen(), // Thay đổi đường dẫn nếu cần
+                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                    const begin = Offset(1.0, 0.0);
+                    const end = Offset.zero;
+                    const curve = Curves.easeInOut;
+
+                    var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                    var offsetAnimation = animation.drive(tween);
+
+                    return SlideTransition(
+                      position: offsetAnimation,
+                      child: child,
+                    );
+                  },
+                ),
+                (route) => false,
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.shopping_cart),
+            onPressed: () {
+              Navigator.of(context).push(
+                PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                    const CartScreen(),
+                  transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                    const begin = Offset(0.0, 1.0);
+                    const end = Offset.zero;
+                    const curve = Curves.easeInOut;
+
+                    var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                    var offsetAnimation = animation.drive(tween);
+
+                    return SlideTransition(
+                      position: offsetAnimation,
+                      child: child,
+                    );
+                  },
+                ),
+              );
             },
           ),
         ],

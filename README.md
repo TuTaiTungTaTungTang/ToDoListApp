@@ -2,14 +2,6 @@
 
 Học kỳ 1, Năm học 2024-2025
 
-**Tên dự án**:
+**BÀI THỰC HÀNH - MY SHOP**:
 
-**MSSV 1**: 
-
-**Họ tên SV 1**:
-
-**MSSV 2**:
-
-**Họ tên SV 2**:
-
-**Lớp học phần**:
+**B2105551 - NGUYỄN VĂN MẶN**

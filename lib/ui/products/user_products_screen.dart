@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
+import '../shared/app_drawer.dart';
 import 'user_product_list_title.dart';
 import 'products_manager.dart';
 
 class UserProductsScreen extends StatelessWidget {
+  static const routeName = '/user_products';
   const UserProductsScreen({super.key});
 
   @override
@@ -20,6 +21,9 @@ class UserProductsScreen extends StatelessWidget {
           ),
         ],
       ),
+      
+        //them drawer
+      drawer: const AppDrawer(),
       body: const UserProductList(),
     );
   }

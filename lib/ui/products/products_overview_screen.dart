@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'products_grid.dart';
-
+import '../screens.dart';
 enum FilterOptions { favorites, all}
 
 class ProductsOverviewScreen extends StatefulWidget {
@@ -32,8 +31,9 @@ class ProductsOverviewScreen extends StatefulWidget {
             ),
             ShoppingCartButton(
               onPressed: () {
-              print('Go to cart screen');
-              },
+              // print('Go to cart screen');
+              Navigator.of(context).pushNamed(CartScreen.routeName);
+            },
             ),
           ],
         ),
@@ -67,17 +67,21 @@ class ProductsOverviewScreen extends StatefulWidget {
   }
 
 
-  class ShoppingCartButton extends StatelessWidget {
-    const ShoppingCartButton({super.key, this.onPressed});
-    final void Function()? onPressed;
+class ShoppingCartButton extends StatelessWidget {
+  const ShoppingCartButton({super.key, this.onPressed});
 
-    @override
+  final void Function()? onPressed;
+
+  @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: const Icon(
-        Icons.shopping_cart,
+      icon: Badge.count(
+        count: CartManager().productCount,
+        child: const Icon(
+          Icons.shopping_cart,
+        ),
       ),
       onPressed: onPressed,
-      );
+    );
   }
-  }
+}
