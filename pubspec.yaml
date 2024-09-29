@@ -21,6 +21,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/fonts/
   fonts:
     - family: Lato
       fonts: 
@@ -30,5 +33,3 @@ flutter:
     - family: Anton
       fonts:
         - asset: assets/fonts/Anton-Regular.ttf
-
-
