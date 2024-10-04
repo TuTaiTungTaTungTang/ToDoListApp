@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
                           onDeleteItem:
                               _confirmDeleteToDoItem, // Thay đổi ở đây
                           // onDeleteItem: _deleteToDoItem, // Truyền hàm xóa
-                          // onEditItem: _editToDoItem, // Thêm hàm sửa
+                          onEditItem: _editToDoItem, // Thêm hàm sửa
                         ),
                     ],
                   ),
@@ -124,6 +124,43 @@ class _HomeState extends State<Home> {
                 Navigator.of(context).pop(); // Đóng dialog
               },
               child: Text("Xóa"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+// them ham edit
+  void _editToDoItem(ToDo todo) {
+    _todoController.text = todo.todoText!; // Điền vào TextEditingController
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Chỉnh sửa công việc"),
+          content: TextField(
+            controller: _todoController,
+            decoration: InputDecoration(hintText: "Nhập nội dung công việc"),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  // Cập nhật todo
+                  todo.todoText = _todoController.text;
+                  toDoService.updateToDoItem(todo); // Cập nhật trong service
+                });
+                _todoController.clear();
+                Navigator.of(context).pop(); // Đóng dialog
+              },
+              child: Text("Lưu"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Đóng dialog
+              },
+              child: Text("Hủy"),
             ),
           ],
         );
