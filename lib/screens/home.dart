@@ -55,7 +55,7 @@ class _HomeState extends State<Home> {
                         ToDoItem(
                           todo: todo,
                           onToDoChanged: _handleToDoChange,
-                          onDeleteItem: _deleteToDoItem,
+                          onDeleteItem: _deleteToDoItem, // Truyền hàm xóa
                         ),
                     ],
                   ),
