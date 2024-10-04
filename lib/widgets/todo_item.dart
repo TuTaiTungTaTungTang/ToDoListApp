@@ -4,12 +4,14 @@ import '../constants/colors.dart';
 
 class ToDoItem extends StatelessWidget {
   final ToDo todo;
-  final Function onToDoChanged;
+  final Function(ToDo) onToDoChanged;
+  final Function(String) onDeleteItem;
 
   const ToDoItem({
     Key? key,
     required this.todo,
     required this.onToDoChanged,
+    required this.onDeleteItem,
   }) : super(key: key);
 
   @override
@@ -18,7 +20,6 @@ class ToDoItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 20),
       child: ListTile(
         onTap: () {
-          // Toggle the completion state when the item is tapped
           onToDoChanged(todo);
         },
         shape: RoundedRectangleBorder(
@@ -38,7 +39,24 @@ class ToDoItem extends StatelessWidget {
             decoration: todo.isDone ? TextDecoration.lineThrough : null,
           ),
         ),
-        // Removed the trailing delete icon
+        trailing: Container(
+          padding: EdgeInsets.all(0),
+          margin: EdgeInsets.symmetric(vertical: 12),
+          height: 35,
+          width: 35,
+          decoration: BoxDecoration(
+            color: tdRed,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: IconButton(
+            color: Colors.white,
+            iconSize: 18,
+            icon: Icon(Icons.delete),
+            onPressed: () {
+              onDeleteItem(todo.id);
+            },
+          ),
+        ),
       ),
     );
   }
