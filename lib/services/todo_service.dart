@@ -13,6 +13,14 @@ class ToDoService {
     todosList.removeWhere((item) => item.id == id);
   }
 
+  // Cập nhật Dịch vụ ToDo
+  void updateToDoItem(ToDo todo) {
+    int index = todosList.indexWhere((element) => element.id == todo.id);
+    if (index != -1) {
+      todosList[index] = todo; // Cập nhật item
+    }
+  }
+
   void addToDoItem(String toDoText) {
     final newTodo = ToDo(
       id: DateTime.now().toString(), // Generate a unique ID
