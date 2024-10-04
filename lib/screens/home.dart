@@ -55,6 +55,7 @@ class _HomeState extends State<Home> {
                         ToDoItem(
                           todo: todo,
                           onToDoChanged: _handleToDoChange,
+                          // cập nhật thông báo hàm xóa
                           onDeleteItem:
                               _confirmDeleteToDoItem, // Thay đổi ở đây
                           // onDeleteItem: _deleteToDoItem, // Truyền hàm xóa
