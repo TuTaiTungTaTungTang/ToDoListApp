@@ -55,7 +55,10 @@ class _HomeState extends State<Home> {
                         ToDoItem(
                           todo: todo,
                           onToDoChanged: _handleToDoChange,
-                          onDeleteItem: _deleteToDoItem, // Truyền hàm xóa
+                          onDeleteItem:
+                              _confirmDeleteToDoItem, // Thay đổi ở đây
+                          // onDeleteItem: _deleteToDoItem, // Truyền hàm xóa
+                          // onEditItem: _editToDoItem, // Thêm hàm sửa
                         ),
                     ],
                   ),
@@ -98,6 +101,34 @@ class _HomeState extends State<Home> {
     setState(() {
       _foundToDo = toDoService.runFilter(enteredKeyword);
     });
+  }
+  // Cập nhật hàm xóa trong lớp Home: bạn có chắc muốn xóa
+
+  void _confirmDeleteToDoItem(String id) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Xác nhận xóa"),
+          content: Text("Bạn có chắc chắn muốn xóa note này không?"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Đóng dialog
+              },
+              child: Text("Hủy"),
+            ),
+            TextButton(
+              onPressed: () {
+                _deleteToDoItem(id); // Gọi hàm xóa
+                Navigator.of(context).pop(); // Đóng dialog
+              },
+              child: Text("Xóa"),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   AppBar _buildAppBar() {
