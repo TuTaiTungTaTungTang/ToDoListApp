@@ -4,12 +4,16 @@ import '../constants/colors.dart';
 
 class ToDoItem extends StatelessWidget {
   final ToDo todo;
-  final Function onToDoChanged;
+  final Function(ToDo) onToDoChanged;
+  final Function(String) onDeleteItem;
+  final Function(ToDo) onEditItem; // Thêm tham số này
 
   const ToDoItem({
     Key? key,
     required this.todo,
     required this.onToDoChanged,
+    required this.onDeleteItem,
+    required this.onEditItem, // Thêm tham số này
   }) : super(key: key);
 
   @override
@@ -18,7 +22,6 @@ class ToDoItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 20),
       child: ListTile(
         onTap: () {
-          // Toggle the completion state when the item is tapped
           onToDoChanged(todo);
         },
         shape: RoundedRectangleBorder(
@@ -38,7 +41,23 @@ class ToDoItem extends StatelessWidget {
             decoration: todo.isDone ? TextDecoration.lineThrough : null,
           ),
         ),
-        // Removed the trailing delete icon
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              icon: Icon(Icons.edit, color: tdBlue),
+              onPressed: () {
+                onEditItem(todo); // Gọi hàm chỉnh sửa
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.delete, color: tdRed),
+              onPressed: () {
+                onDeleteItem(todo.id);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
