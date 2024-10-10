@@ -27,58 +27,6 @@ class _HomeState extends State<Home> {
     super.initState();
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     backgroundColor: tdBGColor,
-  //     appBar: _buildAppBar(),
-  //     body: Stack(
-  //       children: [
-  //         Container(
-  //           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-  //           child: Column(
-  //             children: [
-  //               SearchBox(onChanged: _runFilter),
-  //               Expanded(
-  //                 child: ListView(
-  //                   children: [
-  //                     Container(
-  //                       margin: EdgeInsets.only(top: 50, bottom: 20),
-  //                       child: Text(
-  //                         'All ToDos',
-  //                         style: TextStyle(
-  //                           fontSize: 30,
-  //                           fontWeight: FontWeight.w500,
-  //                         ),
-  //                       ),
-  //                     ),
-  //                     for (ToDo todo in _foundToDo.reversed)
-  //                       ToDoItem(
-  //                         todo: todo,
-  //                         onToDoChanged: _handleToDoChange,
-  //                         // cập nhật thông báo hàm xóa
-  //                         onDeleteItem:
-  //                             _confirmDeleteToDoItem, // Thay đổi ở đây
-  //                         // onDeleteItem: _deleteToDoItem, // Truyền hàm xóa
-  //                         onEditItem: _editToDoItem, // Thêm hàm sửa
-  //                       ),
-  //                   ],
-  //                 ),
-  //               )
-  //             ],
-  //           ),
-  //         ),
-  //         Align(
-  //           alignment: Alignment.bottomCenter,
-  //           child: AddToDoWidget(
-  //             todoController: _todoController,
-  //             onAddPressed: () => _addToDoItem(_todoController.text),
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -221,31 +169,6 @@ class _HomeState extends State<Home> {
     );
   }
 
-  // AppBar _buildAppBar() {
-  //   return AppBar(
-  //     backgroundColor: tdBGColor,
-  //     elevation: 0,
-  //     title: Row(
-  //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //       children: [
-  //         Icon(
-  //           Icons.menu,
-  //           color: tdBlack,
-  //           size: 30,
-  //         ),
-  //         Container(
-  //           height: 40,
-  //           width: 40,
-  //           child: ClipRRect(
-  //             borderRadius: BorderRadius.circular(20),
-  //             child: Image.asset(
-  //                 'assets/images/z5454229034776_1d84ce7f2709be82c56d968a422066ef.jpg'),
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
   AppBar _buildAppBar() {
     return AppBar(
       backgroundColor:
