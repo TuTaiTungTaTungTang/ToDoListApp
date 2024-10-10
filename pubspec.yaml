@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   intl: ^0.17.0
+  image_picker: ^0.8.5+3  # Thêm dòng này để cài đặt thư viện image_picker
 
 dev_dependencies:
   flutter_test:
@@ -32,5 +33,3 @@ flutter:
     - family: Anton
       fonts:
         - asset: assets/fonts/Anton-Regular.ttf
-
-

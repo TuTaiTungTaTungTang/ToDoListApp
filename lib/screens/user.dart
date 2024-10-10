@@ -1,9 +1,36 @@
+<<<<<<< HEAD
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import '../models/user.dart'; // Đảm bảo đường dẫn đến mô hình User là chính xác
 import '../constants/colors.dart';
 import '../shared/app_drawer.dart';
+=======
+// import 'package:flutter/material.dart';
+
+// class UserPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('User Profile'),
+//       ),
+//       body: Center(
+//         child: Text(
+//           'This is the User Page',
+//           style: TextStyle(fontSize: 24),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import '../models/user.dart'; // Đảm bảo đường dẫn đến mô hình User là chính xác
+>>>>>>> e5923a318b8800a44db5b02a13ecabab3b8df70e
 
 class UserPage extends StatefulWidget {
   @override
@@ -49,9 +76,15 @@ class _UserPageState extends State<UserPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: tdBGColor, // Sử dụng màu nền giống như trong Home
       drawer: AppDrawer(), // Sử dụng AppDrawer ở đây
       appBar: _buildAppBar(), // Sử dụng AppBar tương tự như ToDo List
+=======
+      appBar: AppBar(
+        title: Text('Thông Tin Cá Nhân'),
+      ),
+>>>>>>> e5923a318b8800a44db5b02a13ecabab3b8df70e
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -94,7 +127,10 @@ class _UserPageState extends State<UserPage> {
               child: Text('Cập nhật thông tin'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
+<<<<<<< HEAD
                 foregroundColor: Colors.white,
+=======
+>>>>>>> e5923a318b8800a44db5b02a13ecabab3b8df70e
               ),
             ),
           ],
