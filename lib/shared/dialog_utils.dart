@@ -15,14 +15,22 @@ class DialogUtils {
               onPressed: () {
                 Navigator.of(context).pop(); // Đóng dialog
               },
+<<<<<<< HEAD
               child: Text("Hủy"),
+=======
+              child: const Text("Hủy"),
+>>>>>>> f786b41 (update project final)
             ),
             TextButton(
               onPressed: () {
                 onConfirm(); // Gọi hàm xác nhận
                 Navigator.of(context).pop(); // Đóng dialog
               },
+<<<<<<< HEAD
               child: Text("Xác nhận"),
+=======
+              child: const Text("Xác nhận"),
+>>>>>>> f786b41 (update project final)
             ),
           ],
         );

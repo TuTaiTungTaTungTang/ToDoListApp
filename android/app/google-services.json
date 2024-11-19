@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "410502645649",
+    "project_id": "ct484-tai-man",
+    "storage_bucket": "ct484-tai-man.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410502645649:android:edb432aec175fd7a457c30",
+        "android_client_info": {
+          "package_name": "com.example.ct484_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClVXx4gkGL3IprV2SgmuKl8DLWtMxnERs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

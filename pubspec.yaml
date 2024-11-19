@@ -12,18 +12,63 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+<<<<<<< HEAD
   intl: ^0.17.0
   image_picker: ^0.8.5+3  # Thêm dòng này để cài đặt thư viện image_picker
+=======
+  # intl: ^0.17.0
+  image_picker: ^1.1.2  # Thêm dòng này để cài đặt thư viện image_picker
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
+  uuid: ^4.5.1
+  # intl: ^0.20.0
+  flutter_datetime_picker_plus: ^2.1.0
+  animate_do: ^3.3.4
+  flutter_beautiful_popup: ^1.7.0
+  panara_dialogs: ^0.1.2
+  lottie: ^3.1.3
+  # ftoast: ^2.0.0
+  flutter_slider_drawer: ^2.1.1
+  archive: ^3.6.1
+  firebase_auth: ^4.3.0
+  cloud_firestore: ^4.5.0
+  msh_checkbox: ^1.1.1 
+  firebase_core: ^2.32.0
+  fluttertoast: ^8.0.9
+  shared_preferences: ^2.0.15
+  flutter_localizations:
+      sdk: flutter
+  intl: ^0.19.0
+  provider: ^6.1.2
+  # http: ^0.15.0
+  http: 1.2.2
+
+
+>>>>>>> f786b41 (update project final)
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+<<<<<<< HEAD
   flutter_lints: ^4.0.0
+=======
+  build_runner: ^2.4.13
+  hive_generator: ^2.0.1
+  flutter_lints: ^5.0.0
+>>>>>>> f786b41 (update project final)
 
 flutter:
   uses-material-design: true
   assets:  
+<<<<<<< HEAD
     - assets/images/ 
+=======
+    - assets/img/ 
+    - assets/lottie/
+    - assets/langs/en.json
+    - assets/langs/vi.json
+
+>>>>>>> f786b41 (update project final)
   fonts:
     - family: Lato
       fonts: 

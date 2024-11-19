@@ -1,0 +1,16 @@
+{
+    "title": "Cài đặt",
+    "notifications": "Thông báo",
+    "notifications_subtitle": "Quản lý cài đặt thông báo",
+    "privacy": "Quyền riêng tư",
+    "privacy_subtitle": "Xem lại cài đặt quyền riêng tư",
+    "language": "Ngôn ngữ",
+    "language_subtitle": "Thay đổi ngôn ngữ ứng dụng",
+    "dark_mode": "Chế độ tối",
+    "dark_mode_enabled": "Bật",
+    "dark_mode_disabled": "Tắt",
+    "select_language": "Chọn ngôn ngữ",
+    "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt"
+  }
+  

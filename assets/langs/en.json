@@ -1,0 +1,16 @@
+{
+    "title": "Settings",
+    "notifications": "Notifications",
+    "notifications_subtitle": "Manage notification settings",
+    "privacy": "Privacy",
+    "privacy_subtitle": "Review privacy settings",
+    "language": "Language",
+    "language_subtitle": "Change app language",
+    "dark_mode": "Dark Mode",
+    "dark_mode_enabled": "Enabled",
+    "dark_mode_disabled": "Disabled",
+    "select_language": "Select Language",
+    "english": "English",
+    "vietnamese": "Vietnamese"
+  }
+  
